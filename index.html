@@ -54,6 +54,49 @@
   }
 });
     
+      {
+  "action": "onMessage",
+  "message": {
+    "type": "Text",
+    "text": "Test message!"
+  },
+  "token": "0000000-0000-0000-0000-0000000000",
+  "metadata": {
+    "correlationId": "0000000000"
+  },
+  "channel": {
+    "metadata": {
+      "customAttributes": {
+        "department": "sales",
+        "language": "english",
+        "device": "mobile"
+      }
+    }
+  }
+}
+
+customAttributes: {
+  department: "sales",
+  language: "english",
+  device: "mobile"
+}
+
+Genesys("command", "Database.update", {
+  messaging: {
+    customAttributes: {
+      department: "support",
+      booking_id: "54321"
+    }
+  }
+});
+
+customAttributes: {
+  department: "support",
+  language: "english",
+  device: "mobile",
+  booking_id: "54321"
+}
+
 <script type="text/javascript" charset="utf-8">
     (function (g, e, n, es, ys) {
         g['_genesysJs'] = e;
